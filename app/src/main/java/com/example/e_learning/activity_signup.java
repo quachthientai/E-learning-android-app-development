@@ -12,4 +12,5 @@ public class activity_signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         //test test test
     }
+    // test lan 2
 }
