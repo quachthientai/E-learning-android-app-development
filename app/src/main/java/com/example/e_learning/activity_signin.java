@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
@@ -19,6 +20,7 @@ public class activity_signin extends AppCompatActivity {
     private static final String TAG = "SignInActivity";
 
     private EditText editUserNameSI, editPasswordSI;
+    private ImageView signinBG;
     private TextView forgotPassSI, signinTextView, usernameWarnSI, passWarnSI;
     private Button  loginBtnSI, signupBtnSI, backtoMain;
     private ConstraintLayout childSignIn;
@@ -101,8 +103,10 @@ public class activity_signin extends AppCompatActivity {
         Log.d(TAG,"signinView: Started");
         editUserNameSI = findViewById(R.id.editUserName);
         editPasswordSI = findViewById(R.id.editPassword);
-
         forgotPassSI = findViewById(R.id.forgotPass);
+
+        signinTextView = findViewById(R.id.signinTextView);
+        signinBG = findViewById(R.id.bg_signin);
 
         backtoMain = findViewById(R.id.backtomain);
         loginBtnSI = findViewById(R.id.loginBtn);
