@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -67,19 +68,23 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            //onClick sign up button case
-            case R.id.signupBtn_SU:
+            case R.id.signupBtn_SU: //onClick the sign up button
                 registerUserSU();
+                break;
+            case R.id.loginView_SU: //onClick log in if user has an account
+                Intent login = new Intent(activity_signup.this,activity_signin.class);
+                startActivity(login);
                 break;
         }
     }
 
+    //method registerUser to register user
     private void registerUserSU() {
         String firstName = editFirstNameSU.getText().toString();
         String lastName = editLastNameSU.getText().toString();
         String email = editEmailSU.getText().toString();
-        String password = editPassSU.getText().toString();
-        String rePassword = editRePassSU.getText().toString();
+        String password;
+
 
         //Validate the string is empty or not, setError will show error icon
         if (firstName.isEmpty()){
@@ -106,16 +111,26 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
             return;
         }
 
-        if(password.isEmpty()){
-            editPassSU.setError("Passwords is required!");
-            editPassSU.requestFocus();
+        if(editPassSU.getText().toString().equals(editRePassSU.getText().toString())){
+            password = editPassSU.getText().toString();
+
+            if(password.isEmpty()){
+                editPassSU.setError("Passwords is required!");
+                editPassSU.requestFocus();
+                return;
+            }
+
+            if(password.length() < 6){
+                editPassSU.setError("Passwords length should be 6 characters!");
+                editPassSU.requestFocus();
+            }
+
+        }else{
+            editRePassSU.setError("Password do not match!");
+            editRePassSU.requestFocus();
             return;
         }
 
-        if(password.length() < 6){
-            editPassSU.setError("Passwords length should be 6 characters!");
-            editPassSU.requestFocus();
-        }
 
         //create user and add data to firebase
         ELearning2.createUserWithEmailAndPassword(email, password)
