@@ -44,6 +44,6 @@ public class MainActivity extends AppCompatActivity {
     private void mainViews() {
         Log.d(TAG,"mainViews: Started");
         signinBtnMain = findViewById(R.id.signinBtn);
-        signupBtnMain = findViewById(R.id.signupBtn);
+        signupBtnMain = findViewById(R.id.signupBtnSI);
     }
 }
