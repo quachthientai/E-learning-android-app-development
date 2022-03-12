@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/activity_signin.xml" value="0.2642857142857143" />
+        <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/activity_signin.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/activity_signup.xml" value="0.33" />
-        <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/activity_welcomefromsignin.xml" value="0.4317708333333333" />
+        <entry key="..\:/Users/longh/Desktop/E-learning-android-app-development/app/src/main/res/layout/activity_forgotpassword.xml" value="0.25" />
+        <entry key="..\:/Users/longh/Desktop/E-learning-android-app-development/app/src/main/res/layout/activity_signin.xml" value="0.26481481481481484" />
       </map>
     </option>
   </component>

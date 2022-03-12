@@ -8,12 +8,12 @@
     android:id="@+id/childSignin">
 
     <EditText
-        android:id="@+id/editEmailSI"
+        android:id="@+id/editUserName"
         android:layout_width="321dp"
         android:layout_height="50dp"
         android:layout_marginTop="104dp"
         android:ems="10"
-        android:hint="Email Address"
+        android:hint="Username/Email"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/signinToolbar"
         app:layout_constraintStart_toStartOf="@+id/signinToolbar"
@@ -21,57 +21,88 @@
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editPasswordSI"
+        android:id="@+id/editPassword"
         android:layout_width="323dp"
         android:layout_height="54dp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editEmailSI"
+        app:layout_constraintEnd_toEndOf="@+id/editUserName"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editEmailSI"
-        app:layout_constraintTop_toBottomOf="@+id/editEmailSI" />
+        app:layout_constraintStart_toStartOf="@+id/editUserName"
+        app:layout_constraintTop_toBottomOf="@+id/editUserName" />
 
     <TextView
-        android:id="@+id/forgotPassSI"
+        android:id="@+id/forgotPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:minHeight="48dp"
+
         android:text="Forgot password?"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editPasswordSI"
+        app:layout_constraintEnd_toEndOf="@+id/editPassword"
         app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="@+id/editPasswordSI"
-        app:layout_constraintTop_toBottomOf="@+id/editPasswordSI"
+        app:layout_constraintStart_toStartOf="@+id/editPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
         app:layout_constraintVertical_bias="0.088" />
 
     <Button
-        android:id="@+id/loginBtnSI"
+        android:id="@+id/loginBtn"
         android:layout_width="106dp"
         android:layout_height="52dp"
         android:backgroundTint="@color/light_grey"
         android:text="Log in"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/forgotPassSI"
+        app:layout_constraintEnd_toStartOf="@+id/forgotPass"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editPasswordSI"
-        app:layout_constraintTop_toBottomOf="@+id/editPasswordSI"
+        app:layout_constraintStart_toStartOf="@+id/editPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
         app:layout_constraintVertical_bias="0.719" />
 
     <Button
-        android:id="@+id/signupBtnSI"
+        android:id="@+id/signupBtn"
         android:layout_width="106dp"
         android:layout_height="52dp"
         android:backgroundTint="@color/dark_grey"
         android:text="Sign up"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editPasswordSI"
+        app:layout_constraintEnd_toEndOf="@+id/editPassword"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/forgotPassSI"
-        app:layout_constraintTop_toBottomOf="@+id/editPasswordSI"
+        app:layout_constraintStart_toEndOf="@+id/forgotPass"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
         app:layout_constraintVertical_bias="0.719" />
+
+    <TextView
+        android:id="@+id/usernameWarn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username/Email is required."
+        android:textColor="#FF0000"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/editPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editUserName"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="@+id/editUserName"
+        app:layout_constraintTop_toBottomOf="@+id/editUserName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/passWarn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password is required."
+        android:textColor="#FF0000"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/forgotPass"
+        app:layout_constraintEnd_toEndOf="@+id/editPassword"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="@+id/editPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <ImageView
@@ -118,7 +149,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/mainBtnSI"
+        android:id="@+id/backtomain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
@@ -128,18 +159,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bg_signin"
-        app:layout_constraintVertical_bias="0.588" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "829680855995",
+    "firebase_url": "https://e-learning-9d1fa-default-rtdb.firebaseio.com",
     "project_id": "e-learning-9d1fa",
     "storage_bucket": "e-learning-9d1fa.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "829680855995-b66dcshbk6nbn7jlggg0gvovlas1ho4v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.e_learning",
+            "certificate_hash": "409bd9eec6a1273d477f02c91789a27dff40cf11"
+          }
+        },
         {
           "client_id": "829680855995-emjs8l3e93tfmd8apuc4t9gno4pl02co.apps.googleusercontent.com",
           "client_type": 1,

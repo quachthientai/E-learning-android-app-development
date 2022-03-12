@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.util.Patterns;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,14 +23,15 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class activity_signup extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "SignUpActivity";
+    private static final String TAG = "\n" +
+            "public class activity_signup extends AppCompatActivity implemeSignUpActivity";
 
     private EditText editFirstNameSU, editLastNameSU, editEmailSU, editPassSU, editRePassSU;
     private Button signupBtnSU;
     private ImageView signupBG;
     private TextView signupTextViewSU, haveAccountTextViewSU, loginSU;
     private ConstraintLayout childSignUp;
-
+    private TextView register, forgotPassword;
     //Declare firebase authentication to project
     private FirebaseAuth ELearning2;
 
@@ -43,6 +43,8 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
 
         //Initialize firebase authentication
         ELearning2 = FirebaseAuth.getInstance();
+
+
     }
 
     //Initialize the private variable in the sign up view
@@ -75,6 +77,8 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
                 Intent login = new Intent(activity_signup.this,activity_signin.class);
                 startActivity(login);
                 break;
+
+
         }
     }
 

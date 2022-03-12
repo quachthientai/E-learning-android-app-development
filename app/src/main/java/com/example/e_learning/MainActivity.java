@@ -8,8 +8,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     private static final String TAG = "MainActivity";
     private Button signinBtnMain, signupBtnMain;
     private ConstraintLayout parent;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(signUp);
             }
         });
+
     }
 
     //Initialize method, initialize all the button of home screen
