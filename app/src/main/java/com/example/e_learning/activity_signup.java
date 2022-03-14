@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
     private TextView signupTextViewSU, haveAccountTextViewSU, loginSU;
     private ConstraintLayout childSignUp;
     private TextView register, forgotPassword;
+    private ProgressBar progressBarSU;
+
     //Declare firebase authentication to project
     private FirebaseAuth ELearning2;
 
@@ -40,6 +43,8 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         signupView();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Initialize firebase authentication
         ELearning2 = FirebaseAuth.getInstance();
@@ -64,6 +69,8 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
         signupTextViewSU = findViewById(R.id.signupTextView_SU);
         haveAccountTextViewSU = findViewById(R.id.haveAccount_SU);
         loginSU = findViewById(R.id.loginView_SU);
+
+        progressBarSU = (ProgressBar) findViewById(R.id.progressBarSU);
     }
 
     //method onClick of signup activity
@@ -135,7 +142,7 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
             return;
         }
 
-
+        progressBarSU.setVisibility(View.VISIBLE);
         //create user and add data to firebase
         ELearning2.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -143,6 +150,7 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //if the task is successful
                         if(task.isSuccessful()){
+
                             //create the obj of UserInfo class hold the firstname, lastname and email
                             UserInfo user = new UserInfo(firstName, lastName, email);
 
@@ -156,9 +164,11 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
                                 public void onComplete(@NonNull Task<Void> task) {
                                     //if task successful
                                     if (task.isSuccessful()){
+                                        progressBarSU.setVisibility(View.GONE);
                                         //show message "successfully"
                                         Toast.makeText(activity_signup.this, "User has been registered successfully!", Toast.LENGTH_SHORT).show();
                                     }else{
+                                        progressBarSU.setVisibility(View.GONE);
                                         //if not, show "failed"
                                         Toast.makeText(activity_signup.this, "Failed to register! Try again!", Toast.LENGTH_SHORT).show();
                                     }

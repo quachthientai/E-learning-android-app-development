@@ -86,7 +86,7 @@
         app:layout_constraintVertical_bias="0.243" />
 
     <Button
-        android:id="@+id/signupBtnSI"
+        android:id="@+id/signupBtn"
         android:layout_width="277dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/dark_grey"

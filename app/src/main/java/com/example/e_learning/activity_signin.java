@@ -30,9 +30,11 @@ public class activity_signin extends AppCompatActivity implements View.OnClickLi
     private EditText editEmailSI, editPasswordSI;
     private ImageView signinBG;
     private TextView forgotPassSI, signinTextViewSI;
-    private Button  loginBtnSI, signupBtnSI, backtoMainSI;
+    private Button  loginBtnSI, signupBtnSI;
     private ConstraintLayout childSignIn;
     private FirebaseAuth ELearning2;
+    private ProgressBar progressBarSI;
+
 
 
     @Override
@@ -41,6 +43,8 @@ public class activity_signin extends AppCompatActivity implements View.OnClickLi
 
         //Sign in content view
         setContentView(R.layout.activity_signin);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Init firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -60,11 +64,6 @@ public class activity_signin extends AppCompatActivity implements View.OnClickLi
                 Log.d(TAG,"signUpView: Started");
                 Intent signUp = new Intent(activity_signin.this,activity_signup.class);
                 startActivity(signUp);
-                break;
-            case R.id.mainBtnSI:
-                Log.d(TAG, "backtoMain: Started");
-                Intent backMain = new Intent(activity_signin.this,MainActivity.class);
-                startActivity(backMain);
                 break;
             case R.id.forgotPassSI:
                 Log.d(TAG,"forgotPassSI: Started");
@@ -102,12 +101,17 @@ public class activity_signin extends AppCompatActivity implements View.OnClickLi
             return;
         }
 
+        progressBarSI.setVisibility(View.VISIBLE);
         ELearning2.signInWithEmailAndPassword(emailSI,passwordSI).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+
                 if(task.isSuccessful()){
+                    progressBarSI.setVisibility(View.GONE);
                     startActivity(new Intent(activity_signin.this,activity_welcomefromsignin.class));
+
                 }else{
+                    progressBarSI.setVisibility(View.GONE);
                     Toast.makeText(activity_signin.this, "Failed to log in! Please check your email and/or password!", Toast.LENGTH_LONG).show();
                 }
             }
@@ -124,20 +128,15 @@ public class activity_signin extends AppCompatActivity implements View.OnClickLi
         signinTextViewSI = findViewById(R.id.signinTextView);
         signinBG = findViewById(R.id.bg_signin);
 
-        backtoMainSI = findViewById(R.id.mainBtnSI);
-        backtoMainSI.setOnClickListener(this);
-
         loginBtnSI = findViewById(R.id.loginBtnSI);
         loginBtnSI.setOnClickListener(this);
 
         signupBtnSI = findViewById(R.id.signupBtnSI);
         signupBtnSI.setOnClickListener(this);
 
-
         childSignIn = findViewById(R.id.childSignin);
 
+        progressBarSI = (ProgressBar) findViewById(R.id.progressBarSI);
     }
-
-
 }
 

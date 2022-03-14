@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements  View.OnClickListener{
     private static final String TAG = "MainActivity";
     private Button signinBtnMain, signupBtnMain;
     private ConstraintLayout parent;
@@ -21,30 +21,29 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         mainViews();
-        signinBtnMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
+
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.signinBtn:
                 Log.d(TAG,"signinViews: Started");
                 Intent signIn = new Intent(MainActivity.this,activity_signin.class);
                 startActivity(signIn);
-            }
-        });
-
-        signupBtnMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                break;
+            case R.id.signupBtn:
                 Log.d(TAG,"signunViews: Started");
                 Intent signUp = new Intent(MainActivity.this,activity_signup.class);
                 startActivity(signUp);
-            }
-        });
-
+                break;
+        }
     }
 
     //Initialize method, initialize all the button of home screen
     private void mainViews() {
         Log.d(TAG,"mainViews: Started");
         signinBtnMain = findViewById(R.id.signinBtn);
-        signupBtnMain = findViewById(R.id.signupBtnSI);
+        signinBtnMain.setOnClickListener(this);
+        signupBtnMain = findViewById(R.id.signupBtn);
+        signupBtnMain.setOnClickListener(this);
     }
 }
