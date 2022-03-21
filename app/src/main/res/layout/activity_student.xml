@@ -4,17 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signIn.activity_welcomefromsignin">
+    tools:context=".signIn.student">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="194dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="303dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="330dp"
-        android:text="welcome"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="student "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

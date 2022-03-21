@@ -1,4 +1,4 @@
-package com.example.e_learning;
+package com.example.e_learning.signIn;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -16,12 +17,21 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.e_learning.R;
+import com.example.e_learning.signUp.activity_signup;
+import com.example.e_learning.forgotPassword.forgot_password;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class activity_signin extends AppCompatActivity implements View.OnClickListener {
 
@@ -34,7 +44,7 @@ public class activity_signin extends AppCompatActivity implements View.OnClickLi
     private ConstraintLayout childSignIn;
     private FirebaseAuth ELearning2;
     private ProgressBar progressBarSI;
-
+    public String usertype = null;
 
 
     @Override
@@ -62,12 +72,12 @@ public class activity_signin extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.signupBtnSI:
                 Log.d(TAG,"signUpView: Started");
-                Intent signUp = new Intent(activity_signin.this,activity_signup.class);
+                Intent signUp = new Intent(activity_signin.this, activity_signup.class);
                 startActivity(signUp);
                 break;
             case R.id.forgotPassSI:
                 Log.d(TAG,"forgotPassSI: Started");
-                Intent forgotPass = new Intent(activity_signin.this,forgot_password.class);
+                Intent forgotPass = new Intent(activity_signin.this, forgot_password.class);
                 startActivity(forgotPass);
                 break;
         }
@@ -108,15 +118,33 @@ public class activity_signin extends AppCompatActivity implements View.OnClickLi
 
                 if(task.isSuccessful()){
                     progressBarSI.setVisibility(View.GONE);
-                    startActivity(new Intent(activity_signin.this,activity_welcomefromsignin.class));
+                    String uid = task.getResult().getUser().getUid();
+                    FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
 
+                    firebaseDatabase.getReference().child("Users").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                            usertype = snapshot.getValue(String.class);
+                            if(usertype.equals("isTeacher")){
+                                Intent intent = new Intent(activity_signin.this,teacher.class);
+                                startActivity(intent);
+                            }
+                            if(usertype.equals("isStudent")){
+                                Intent intent = new Intent(activity_signin.this,student.class);
+                                startActivity(intent);
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
                 }else{
                     progressBarSI.setVisibility(View.GONE);
                     Toast.makeText(activity_signin.this, "Failed to log in! Please check your email and/or password!", Toast.LENGTH_LONG).show();
                 }
             }
         });
-
     }
 
     private void signinView(){

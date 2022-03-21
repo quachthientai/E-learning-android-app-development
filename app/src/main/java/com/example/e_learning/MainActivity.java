@@ -9,6 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.e_learning.signIn.activity_signin;
+import com.example.e_learning.signUp.activity_signup;
+
 public class MainActivity extends AppCompatActivity implements  View.OnClickListener{
     private static final String TAG = "MainActivity";
     private Button signinBtnMain, signupBtnMain;
@@ -27,12 +30,12 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         switch (view.getId()){
             case R.id.signinBtn:
                 Log.d(TAG,"signinViews: Started");
-                Intent signIn = new Intent(MainActivity.this,activity_signin.class);
+                Intent signIn = new Intent(MainActivity.this, activity_signin.class);
                 startActivity(signIn);
                 break;
             case R.id.signupBtn:
                 Log.d(TAG,"signunViews: Started");
-                Intent signUp = new Intent(MainActivity.this,activity_signup.class);
+                Intent signUp = new Intent(MainActivity.this, activity_signup.class);
                 startActivity(signUp);
                 break;
         }

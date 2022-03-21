@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.e_learning" >
+    package="com.example.e_learning">
 
     <application
         android:allowBackup="true"
@@ -8,25 +8,31 @@
         android:label=" "
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Elearning" >
+        android:theme="@style/Theme.Elearning">
         <activity
-            android:name=".activity_welcomefromsignin"
+            android:name=".signIn.student"
             android:exported="false" />
         <activity
-            android:name=".forgot_password"
-            android:exported="false"
-            android:parentActivityName=".activity_signin"/>
+            android:name=".signIn.teacher"
+            android:exported="false" />
         <activity
-            android:name=".activity_signup"
-            android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:name=".signIn.activity_welcomefromsignin"
+            android:exported="false" />
         <activity
-            android:name=".activity_signin"
+            android:name=".forgotPassword.forgot_password"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".signIn.activity_signin" />
+        <activity
+            android:name=".signUp.activity_signup"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".signIn.activity_signin"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
