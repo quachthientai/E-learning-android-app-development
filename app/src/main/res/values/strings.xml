@@ -9,4 +9,18 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string-array name= "student_view">
+        <item>Classes</item>
+        <item>Due Date</item>
+        <item>Assignments</item>
+        <item>Events</item>
+    </string-array>
+    
+    <string-array name="description">
+        <item>random</item>
+        <item>random</item>
+        <item>random</item>
+        <item>random</item>
+    </string-array>
 </resources>
