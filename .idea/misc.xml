@@ -8,8 +8,12 @@
         <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/activity_signin.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/activity_signup.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/activity_welcomefromsignin.xml" value="0.4317708333333333" />
+        <entry key="..\:/Users/longh/Desktop/E-learning-android-app-development/app/src/main/res/layout/activity_forgotpassword.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/longh/Desktop/E-learning-android-app-development/app/src/main/res/layout/activity_signin.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/longh/Desktop/E-learning-android-app-development/app/src/main/res/layout/activity_student.xml" value="0.13164556962025317" />
+        <entry key="..\:/Users/longh/Desktop/E-learning-android-app-development/app/src/main/res/layout/activity_student.xml" value="0.33" />
+        <entry key="..\:/Users/longh/Desktop/E-learning-android-app-development/app/src/main/res/layout/activity_student_site.xml" value="0.2564814814814815" />
+        <entry key="..\:/Users/longh/Desktop/E-learning-android-app-development/app/src/main/res/layout/activity_student_site2.xml" value="0.1941747572815534" />
+        <entry key="..\:/Users/longh/Desktop/E-learning-android-app-development/app/src/main/res/layout/activity_teacher.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/longh/Desktop/E-learning-android-app-development/app/src/main/res/layout/my_row.xml" value="0.5" />
       </map>
     </option>
