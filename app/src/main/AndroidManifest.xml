@@ -10,14 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Elearning">
         <activity
-            android:name=".signIn.student"
-            android:exported="false" />
+            android:name=".signIn.activity_teacherDashboard"
+            android:exported="false"
+            android:parentActivityName=".signIn.activity_signin"/>
         <activity
-            android:name=".signIn.teacher"
-            android:exported="false" />
-        <activity
-            android:name=".signIn.activity_welcomefromsignin"
-            android:exported="false" />
+            android:name=".signIn.activity_studentDashboard"
+            android:exported="false"
+            android:parentActivityName=".signIn.activity_signin"/>
         <activity
             android:name=".forgotPassword.forgot_password"
             android:exported="false"

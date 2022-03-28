@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".signIn.activity_signin"
+    tools:layout_editor_absoluteX = "-142dp;"
+    tools:layout_editor_absoluteY = "-263dp"
+    android:background = "#EEEEEE"
     android:id="@+id/childSignin">
 
     <EditText
@@ -90,7 +93,7 @@
         android:id="@+id/signinToolbar"
         android:layout_width="307dp"
         android:layout_height="40dp"
-        android:background="@color/white"
+        android:background="#EEEEEE"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"

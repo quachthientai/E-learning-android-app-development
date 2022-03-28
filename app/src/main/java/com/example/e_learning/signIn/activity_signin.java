@@ -6,7 +6,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -25,12 +24,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class activity_signin extends AppCompatActivity implements View.OnClickListener {
@@ -119,26 +116,29 @@ public class activity_signin extends AppCompatActivity implements View.OnClickLi
                 if(task.isSuccessful()){
                     progressBarSI.setVisibility(View.GONE);
                     String uid = task.getResult().getUser().getUid();
-                    FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-
+                    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                     firebaseDatabase.getReference().child("Users").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                             usertype = snapshot.getValue(String.class);
                             if(usertype.equals("isTeacher")){
-                                Intent intent = new Intent(activity_signin.this,teacher.class);
+                                Intent intent = new Intent(activity_signin.this,activity_teacherDashboard.class);
                                 startActivity(intent);
                             }
                             if(usertype.equals("isStudent")){
-                                Intent intent = new Intent(activity_signin.this,student.class);
+                                Intent intent = new Intent(activity_signin.this,activity_studentDashboard.class);
                                 startActivity(intent);
                             }
                         }
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(activity_signin.this,"Fail",Toast.LENGTH_LONG).show();
                         }
                     });
+
+
                 }else{
                     progressBarSI.setVisibility(View.GONE);
                     Toast.makeText(activity_signin.this, "Failed to log in! Please check your email and/or password!", Toast.LENGTH_LONG).show();

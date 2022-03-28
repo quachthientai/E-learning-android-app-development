@@ -1,4 +1,4 @@
-package com.example.e_learning.signUp;
+package com.example.e_learning.signIn;
 
 public class UserInfo {
     public String firstnameInfo, lastnameInfo, emailInfo;
@@ -40,7 +40,10 @@ public class UserInfo {
 
     }
 
-
+    public UserInfo(String firstnameInfo, String lastnameInfo) {
+        this.firstnameInfo = firstnameInfo;
+        this.lastnameInfo = lastnameInfo;
+    }
 
     public UserInfo(String firstnameInfo, String lastnameInfo, String emailInfo, String userType){
         this.firstnameInfo = firstnameInfo;
