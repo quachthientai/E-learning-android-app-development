@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.e_learning.R;
 
-public class activity_teacherDashboard extends AppCompatActivity {
+public class student extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_dashboard);
+        setContentView(R.layout.activity_student);
     }
 }

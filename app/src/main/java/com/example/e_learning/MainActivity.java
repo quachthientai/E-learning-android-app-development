@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                 startActivity(signIn);
                 break;
             case R.id.signupBtn:
-                Log.d(TAG,"signunViews: Started");
+                Log.d(TAG,"signupViews: Started");
                 Intent signUp = new Intent(MainActivity.this, activity_signup.class);
                 startActivity(signUp);
                 break;

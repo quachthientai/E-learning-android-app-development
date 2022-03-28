@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.e_learning.MainActivity;
 import com.example.e_learning.R;
 import com.example.e_learning.signIn.UserInfo;
 import com.example.e_learning.signIn.activity_signin;
@@ -195,6 +196,7 @@ public class activity_signup extends AppCompatActivity implements View.OnClickLi
                                         progressBarSU.setVisibility(View.GONE);
                                         //show message "successfully"
                                         Toast.makeText(activity_signup.this, "User has been registered successfully!", Toast.LENGTH_SHORT).show();
+                                        Intent signUp = new Intent(activity_signup.this, MainActivity.class);
                                     }else{
                                         progressBarSU.setVisibility(View.GONE);
                                         //if not, show "failed"
