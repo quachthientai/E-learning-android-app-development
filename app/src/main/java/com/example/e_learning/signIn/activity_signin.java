@@ -121,10 +121,9 @@ public class activity_signin extends AppCompatActivity implements View.OnClickLi
                     firebaseDatabase.getReference().child("Users").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                             usertype = snapshot.getValue(String.class);
                             if(usertype.equals("isTeacher")){
-                                Intent intent = new Intent(activity_signin.this,activity_teacherDashboard.class);
+                                Intent intent = new Intent(activity_signin.this,teacher.class);
                                 startActivity(intent);
                             }
                             if(usertype.equals("isStudent")){

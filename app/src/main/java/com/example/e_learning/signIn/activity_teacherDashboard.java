@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.e_learning.R;
 
-public class student extends AppCompatActivity {
+class student extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

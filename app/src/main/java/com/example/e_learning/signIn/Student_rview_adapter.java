@@ -71,7 +71,7 @@ public class Student_rview_adapter extends RecyclerView.Adapter<Student_rview_ad
             myText2 = itemView.findViewById(R.id.myText2);
             myImage = itemView.findViewById(R.id.myImageView);
 
-            mainLayout = itemView.findViewById(R.id.mainLayout)
+            mainLayout = itemView.findViewById(R.id.mainLayout);
         }
     }
 }
