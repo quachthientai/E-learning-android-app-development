@@ -11,6 +11,15 @@
         <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/activity_teacher.xml" value="0.3859375" />
         <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/activity_welcomefromsignin.xml" value="0.4317708333333333" />
         <entry key="..\:/AndroidStudioProjects/Elearning2/app/src/main/res/layout/teacher.xml" value="0.3859375" />
+        <entry key="app/src/main/res/layout/activity_forgotpassword.xml" value="0.12386018237082067" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2546875" />
+        <entry key="app/src/main/res/layout/activity_signin.xml" value="0.2546875" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.2546875" />
+        <entry key="app/src/main/res/layout/activity_student_dashboard.xml" value="0.2546875" />
+        <entry key="app/src/main/res/layout/activity_student_site.xml" value="0.2546875" />
+        <entry key="app/src/main/res/layout/activity_student_site2.xml" value="0.2546875" />
+        <entry key="app/src/main/res/layout/activity_teacher_dashboard.xml" value="0.2546875" />
+        <entry key="app/src/main/res/layout/activity_upload_file.xml" value="0.25052083333333336" />
       </map>
     </option>
   </component>

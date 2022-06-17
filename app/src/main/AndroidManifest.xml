@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.e_learning" >
+    package="com.example.e_learning">
 
     <application
         android:allowBackup="true"
@@ -8,20 +8,23 @@
         android:label=" "
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Elearning" >
+        android:theme="@style/Theme.Elearning">
+        <activity
+            android:name=".uploadFile"
+            android:exported="false" />
         <activity
             android:name=".signIn.Student_site"
-            android:parentActivityName=".signIn.student"
+            android:exported="false"
             android:label="Details"
-            android:exported="false" />
+            android:parentActivityName=".signIn.student" />
         <activity
             android:name=".signIn.activity_teacherDashboard"
             android:exported="false"
-            android:parentActivityName=".signIn.activity_signin"/>
+            android:parentActivityName=".signIn.activity_signin" />
         <activity
             android:name=".signIn.activity_studentDashboard"
             android:exported="false"
-            android:parentActivityName=".signIn.activity_signin"/>
+            android:parentActivityName=".signIn.activity_signin" />
         <activity
             android:name=".forgotPassword.forgot_password"
             android:exported="false"
@@ -36,7 +39,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

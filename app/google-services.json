@@ -38,6 +38,49 @@
       "api_key": [
         {
           "current_key": "AIzaSyA7wndDdAAwPuONIUuGAJHLK09mWuzHq-E"
+        },
+        {
+          "current_key": "AIzaSyAsMeihabllLRaC1U9r296US2fhTBdVv6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829680855995-lsspmujjkecc4o8d2acbua17feuti4kh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829680855995:android:127f40862d14b1cf59f29e",
+        "android_client_info": {
+          "package_name": "com.example.elearningteacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829680855995-t5uh8b7bfn48l31q5npi3g4gaj6baquq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.elearningteacher",
+            "certificate_hash": "060c8de44b6085b4d2d3d3f79ee17b3cd2a7aa59"
+          }
+        },
+        {
+          "client_id": "829680855995-lsspmujjkecc4o8d2acbua17feuti4kh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7wndDdAAwPuONIUuGAJHLK09mWuzHq-E"
+        },
+        {
+          "current_key": "AIzaSyAsMeihabllLRaC1U9r296US2fhTBdVv6o"
         }
       ],
       "services": {
