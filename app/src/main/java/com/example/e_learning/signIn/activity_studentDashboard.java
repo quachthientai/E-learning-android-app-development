@@ -1,4 +1,4 @@
-package com.example.e_learning.signIn;
+package student;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.e_learning.MainActivity;
 import com.example.e_learning.R;
+import com.example.e_learning.signIn.UserInfo;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -69,6 +70,11 @@ public class activity_studentDashboard extends AppCompatActivity implements View
                 startActivity(intent);
                 Toast.makeText(this, "User logout successfully!", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.editProfileBtn:
+                Intent studentProfile= new Intent(activity_studentDashboard.this, activity_studentEditProfile.class);
+                startActivity(studentProfile);
+                break;
+
         }
     }
 
